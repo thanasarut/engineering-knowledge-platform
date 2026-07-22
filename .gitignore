@@ -1,0 +1,7 @@
+## Security Preventive
+.ovpn
+*.key
+*.pem
+*.crt
+.env
+*.kdbx
