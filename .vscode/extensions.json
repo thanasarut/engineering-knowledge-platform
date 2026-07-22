@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "yzhang.markdown-all-in-one",
+    "davidanson.vscode-markdownlint",
+    "eamodio.gitlens",
+    "mushan.vscode-paste-image",
+    "streetsidesoftware.code-spell-checker",
+    "hediet.vscode-drawio"
+  ]
+}
