@@ -9,9 +9,9 @@
 ## Obsidian workspace (machine/session specific)
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
-
-## Obsidian cache
 .obsidian/cache/
+.obsidian/plugins/
+
 
 ## OS files
 .DS_Store
