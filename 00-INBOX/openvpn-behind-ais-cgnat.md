@@ -1,6 +1,7 @@
 ---
 title: OpenVPN behind AIS Fibre CGNAT
-created: 2026-07-14
+created: 2026-07-14 12:00:00 +07:00
+type: inbox
 status: captured
 tags:
   - networking
