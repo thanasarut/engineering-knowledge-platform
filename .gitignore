@@ -5,3 +5,22 @@
 *.crt
 .env
 *.kdbx
+
+## Obsidian workspace (machine/session specific)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+## Obsidian cache
+.obsidian/cache/
+
+## OS files
+.DS_Store
+Thumbs.db
+
+## Temporary files
+*.tmp
+*.temp
+*.bak
+
+#Editor files
+.vscode/settings.json
