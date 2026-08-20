@@ -1,51 +1,46 @@
 ---
-
-id: career-001 title: Toyota Tsusho Electronics Thailand — Embedded Software Engineering & QA type: career-evidence status: canonical-draft visibility: public-safe
-
-company: Toyota Tsusho Electronics (Thailand) Co., Ltd. company_current_name: Toyota Tsusho NEXTY Electronics (Thailand) Co., Ltd.
-
-employment_start: 2007-04 employment_end: 2009-08
-
-initial_title: Software Development Engineer later_role: Quality Assurance / Engineering Verification later_official_title: TODO
-
+id: career-001
+title: Toyota Tsusho Electronics Thailand — Embedded Software Engineering & QA
+type: career-evidence
+status: canonical-draft
+visibility: public-safe
+company: Toyota Tsusho Electronics (Thailand) Co., Ltd. 
+company_current_name: Toyota Tsusho NEXTY Electronics (Thailand) Co., Ltd.
+employment_start: 2007-04
+employment_end: 2009-08
+initial_title: Software Development Engineer
+later_role: Quality Assurance / Engineering Verification
+later_official_title: TODO
 domain:
-
-- automotive
-- embedded-software
-- software-verification
-
+  - automotive
+  - embedded-software
+  - software-verification
 technologies:
-
-- Embedded C
-- Excel
-- VBA
-- Source Insight
-- HIL
-
+  - Embedded C
+  - Excel
+  - VBA
+  - Source Insight
+  - HIL
 engineering_concepts:
-
-- finite-state-machine
-- state-transition-testing
-- decision-table
-- branch-coverage
-- condition-coverage
-- MC/DC
-- HIL-testing
-- MISRA-C
-- specification-recovery
-- engineering-automation
-- independent-verification
-
-source_confidence: mixed last_reviewed: 2026-08-18
-
+  - finite-state-machine
+  - state-transition-testing
+  - decision-table
+  - branch-coverage
+  - condition-coverage
+  - MC/DC
+  - HIL-testing
+  - MISRA-C
+  - specification-recovery
+  - engineering-automation
+  - independent-verification
+source_confidence: mixed 
+last_reviewed: 2026-08-18
 tags:
-
-- career-evidence
-- embedded
-- automotive
-- testing
-- quality-assurance
-
+  - career-evidence
+  - embedded
+  - automotive
+  - testing
+  - quality-assurance
 ---
 
 # Toyota Tsusho Electronics Thailand — Embedded Software Engineering & QA
