@@ -36,7 +36,7 @@ engineering_concepts:
   - synchronization-architecture
 
 source_notes:
-  - 00-INBOX/obsidian-git-android-storage-issue.md
+  - "[[00-INBOX/obsidian-git-android-storage-issue.md]]"
 
 publish_candidate:
   - medium
@@ -490,7 +490,7 @@ The failure story should be retained because it explains _why_ the final procedu
 
 # References
 
-- Original investigation: `00-INBOX/obsidian-git-android-storage-issue.md`
+- Original investigation: [[00-INBOX/obsidian-git-android-storage-issue.md]]
     
 - Obsidian Git upstream mobile setup documentation
     

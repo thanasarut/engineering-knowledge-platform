@@ -4,7 +4,7 @@ title: Toyota Tsusho Electronics Thailand — Embedded Software Engineering & QA
 type: career-evidence
 status: canonical-draft
 visibility: public-safe
-company: Toyota Tsusho Electronics (Thailand) Co., Ltd. 
+company: Toyota Tsusho Electronics (Thailand) Co., Ltd.
 company_current_name: Toyota Tsusho NEXTY Electronics (Thailand) Co., Ltd.
 employment_start: 2007-04
 employment_end: 2009-08
@@ -33,7 +33,7 @@ engineering_concepts:
   - specification-recovery
   - engineering-automation
   - independent-verification
-source_confidence: mixed 
+source_confidence: mixed
 last_reviewed: 2026-08-18
 tags:
   - career-evidence
@@ -42,7 +42,6 @@ tags:
   - testing
   - quality-assurance
 ---
-
 # Toyota Tsusho Electronics Thailand — Embedded Software Engineering & QA
 
 ## 1. Career Context
