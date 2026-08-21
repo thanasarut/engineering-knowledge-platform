@@ -42,6 +42,7 @@ tags:
   - testing
   - quality-assurance
 ---
+
 # Toyota Tsusho Electronics Thailand — Embedded Software Engineering & QA
 
 ## 1. Career Context
