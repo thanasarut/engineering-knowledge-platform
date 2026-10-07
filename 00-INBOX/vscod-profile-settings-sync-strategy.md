@@ -266,7 +266,7 @@ Company Base เป็น sanitized version ที่เหมาะกับ co
   - [ ] Markdown
   - [ ] Git
   - [ ] Old / unused
-- [ ] Create Company Base settings
+- [x] Create Company Base settings
 - [ ] Check Windows / WSL availability
 - [ ] Create Company Profiles
 - [ ] Configure Company Settings Sync
@@ -292,3 +292,168 @@ docs/
 
 ถ้าภายหลังมีผลลัพธ์ที่ใช้เป็น career/performance evidence ได้
 ค่อยสรุป artifact แยกเข้า `EIJ/`
+
+---
+
+## Implementation Notes — 2026-10-07
+
+### Common Base: current state
+
+Company `Default` profile has been initialized as the Common Base.
+
+Current decisions:
+
+- Common settings live in the Default profile.
+- Settings that must be shared by every profile are listed in `workbench.settings.applyToAllProfiles`.
+- Common extensions are handled separately from settings.
+- Common extensions such as VSCodeVim and PlantUML can be marked **Apply Extension to all Profiles**.
+- Platform / Java / Node.js profiles have not been created yet.
+
+### Settings vs Extensions: two separate mechanisms
+
+Common settings and common extensions are not controlled by the same configuration.
+
+```text
+Common settings
+└─ workbench.settings.applyToAllProfiles
+
+Common extensions
+└─ Extensions UI
+   └─ Apply Extension to all Profiles
+```
+
+This distinction is important because a setting can be common without its extension being common, and vice versa.
+
+### Profile relationship
+
+`Platform`, `Java`, and `Node.js` should be treated as sibling profiles at the same scope.
+
+```text
+                    Common
+          Apply to All Profiles
+                       │
+          ┌────────────┼────────────┐
+          ▼            ▼            ▼
+      Platform        Java        Node.js
+```
+
+Profiles do not behave as a permanent parent-child inheritance tree.
+
+Creating a new profile from Default can copy configuration as a starting point, but later Default changes are not automatically inherited unless the relevant setting or extension is explicitly applied to all profiles.
+
+### Suggested profile boundaries
+
+```text
+Default / Common
+├─ editor behavior
+├─ theme / UI
+├─ Git behavior
+├─ Vim
+├─ PlantUML
+└─ other tools used regardless of application stack
+
+Platform
+├─ YAML
+├─ Terraform
+├─ Ansible
+├─ Kubernetes
+├─ Docker
+└─ Helm
+
+Java
+├─ Java
+├─ Spring
+├─ Maven / Gradle
+└─ OpenAPI tooling when relevant
+
+Node.js
+├─ JavaScript / TypeScript tooling
+├─ ESLint
+├─ package-manager tooling
+└─ OpenAPI tooling when relevant
+```
+
+The exact extension list should be added incrementally when there is a real use case rather than designing every profile up front.
+
+### Dev Container boundary
+
+A Dev Container is part of the project development environment, not the personal VS Code identity.
+
+Do not depend on Settings Sync to make a Dev Container reproducible.
+
+Project-required extensions should be declared in `.devcontainer/devcontainer.json`, for example:
+
+```json
+{
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "redhat.vscode-yaml",
+        "hashicorp.terraform"
+      ]
+    }
+  }
+}
+```
+
+Repository recommendations can also live in:
+
+```text
+.vscode/extensions.json
+```
+
+Project-specific VS Code behavior belongs in:
+
+```text
+.vscode/settings.json
+```
+
+Mental model:
+
+```text
+Settings Sync
+└─ who I am / how I use the editor
+
+Repository + Dev Container
+└─ what this project needs to run and develop
+```
+
+### CLI tool boundary
+
+Command-line tools such as `jq`, `yq`, `kubectl`, `helm`, Terraform CLI, and similar tools are not VS Code profile configuration.
+
+Treat them as environment/toolchain dependencies.
+
+```text
+VS Code profile
+└─ editor extensions and editor behavior
+
+Host OS
+└─ general-purpose CLI tools used interactively
+
+Dev Container
+└─ project-specific CLI tools and required versions
+```
+
+For Windows administration and remote Windows hosts, PowerShell remains an important native tool even when Unix-style tools such as `jq` are preferred for portable workflows.
+
+### Current checkpoint
+
+Completed:
+
+- [x] Create Company Default/Common Base
+- [x] Configure common settings to apply across profiles
+- [x] Decide that common extensions use **Apply Extension to all Profiles**
+- [x] Establish Dev Container vs Settings Sync boundary
+- [x] Establish CLI/toolchain vs VS Code profile boundary
+
+Deferred:
+
+- [ ] Create Platform profile
+- [ ] Add Platform-specific extensions
+- [ ] Create Java profile when needed
+- [ ] Create Node.js profile when needed
+- [ ] Review Personal Mac Default/Base against the new Common Base
+- [ ] Configure Settings Sync after the profile model is stable
+- [ ] Validate the same identity/profile model in Codespaces
+
